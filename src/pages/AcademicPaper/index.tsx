@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import styles from './index.less';
 import { connect } from 'react-redux';
 import { Button, Empty } from 'antd';
+import recentPublications from './recentPublications';
 
 interface IList {
-  link: string;
+  link?: string;
+  linkLabel?: string;
   title: string;
   author: string;
   time: string;
-  img: string;
+  img?: string;
   journal: string;
 }
 
@@ -18,18 +20,7 @@ interface IOption {
 }
 
 const total = [
-  {
-    title: 'Development of achieving constancy in lexical tone identification with contextual cues(in press)',
-    author: 'Fei CHEN, Kaile ZHANG*, Qingqing GUO, and Jia LV.',
-    journal: 'Journal of Speech, Language, and Hearing Research.',
-    time: '2023',
-  },
-  {
-    title: '不同二语水平的中国英语学习者情绪词汇语义-韵律加工研究',
-    author: '张高德、陈飞*.',
-    journal: '外语教学与研究',
-    time: '2023',
-  },
+  ...recentPublications,
   {
     title: 'Atypical Prosodic Realization by Mandarin-Speaking Autistic Children: Evidence from Tone Sandhi and Neutral Tone',
     author: 'Chengyu GUO, Fei CHEN*, Jinting YAN, Xiaotian GAO, and Min ZHU.',
@@ -306,6 +297,18 @@ const total = [
 
 const options = [
   {
+    label: '2026',
+    value: '2026',
+  },
+  {
+    label: '2025',
+    value: '2025',
+  },
+  {
+    label: '2024',
+    value: '2024',
+  },
+  {
     label: '2023',
     value: '2023',
   },
@@ -329,7 +332,7 @@ const options = [
 
 function AcademicPaper() {
   const [list, setList] = useState<IList[]>([]);
-  const [curOpt, setCurOpt] = useState<string>('2022');
+  const [curOpt, setCurOpt] = useState<string>('2026');
 
   useEffect(() => {
     setList(
@@ -385,7 +388,7 @@ function AcademicPaper() {
                   {item.journal}
                   {item.link ? (
                     <a href={item.link} target="_blank" rel="noreferrer">
-                      Full text
+                      {item.linkLabel || 'Full text'}
                     </a>
                   ) : null}
                 </div>
