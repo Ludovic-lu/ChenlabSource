@@ -20,10 +20,7 @@ function News() {
             <div id={item.id} key={item.id} className={styles.partWapper}>
               <div className="news_dl">
                 <dt>
-                  <span className={styles.title}>
-                    {item.isTest ? '【测试新闻】' : ''}
-                    {item.title}
-                  </span>
+                  <span className={styles.title}>{item.title}</span>
                   <span className={styles.time}>[{item.time}]</span>
                 </dt>
                 <div className={styles.desc}>{item.desc}</div>
@@ -34,7 +31,7 @@ function News() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {item.isTest ? '阅读论文原文' : '查看相关链接'}
+                    查看相关链接
                   </a>
                 )}
               </div>

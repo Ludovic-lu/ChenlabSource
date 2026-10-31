@@ -1,6 +1,6 @@
 # 说明
 
-React + React-Router + Typescript + ant design + webpack4.0
+React + React-Router + Typescript + ant design + webpack 5
 使用 React hook 进行开发
 
 # 项目运行
@@ -17,11 +17,35 @@ yarn build
 
 ```
 
+## 本地运行验证（2026-10-24，Windows PowerShell）
+
+已在 Node.js 24.15.0、Yarn 1.22.22 下完成生产构建和开发服务启动验证。
+锁文件中的旧镜像下载地址已改为 npm 官方源，依赖版本和完整性校验值保持不变。
+
+```powershell
+# 没有全局 Yarn 时，可通过 Corepack 使用 Yarn 1；不自动修改 package.json
+$env:COREPACK_ENABLE_AUTO_PIN = '0'
+corepack yarn@1.22.22 install --frozen-lockfile --non-interactive --registry https://registry.npmjs.org
+
+# Webpack 5.50.0 在 Node 24 下需要此兼容参数，仅作用于当前终端及其子进程
+$env:NODE_OPTIONS = '--openssl-legacy-provider'
+
+# 生产构建，输出到 dist/，包分析报告为 dist/report.html
+npm run build
+
+# 本地开发，访问 http://127.0.0.1:8080/；Ctrl+C 停止
+npm start
+```
+
+开发服务仅监听本机，不自动打开浏览器。生产构建生成静态包分析报告后正常退出。
+目前仍有旧依赖提示、Browserslist 数据过期和资源体积警告；这些不阻止本次构建。
+Webpack 使用 `transpileOnly`，构建成功不代表完整 TypeScript 类型检查通过。
+
 # 业务介绍
 
 目录结构
 
-    ├── build                   // 编译结果目录
+    ├── dist                    // 编译结果目录
     ├── .husky                  // git代码提交前husky验证配置
     ├── config                  // webpack 配置目录
     │   ├── webpack.base.ts     // 公用配置

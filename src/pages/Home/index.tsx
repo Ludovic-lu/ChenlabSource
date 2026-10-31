@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { latestNews } from '../News/newsData';
 import { Carousel } from 'antd';
 import '../../../mock/homeApi';
 import styles from './index.less';
 import { connect } from 'react-redux';
-import ReactSeamlessScroll from 'react-seamless-scroll';
 import banner0 from '../../asset/home/0.jpg';
 import banner1 from '../../asset/home/1.jpg';
 import banner2 from '../../asset/home/2.jpg';
@@ -12,6 +11,39 @@ import banner3 from '../../asset/home/3.jpg';
 import { Link } from 'react-router-dom';
 
 function Home() {
+  const newsRef = useRef<HTMLDivElement>(null);
+  const resumeAt = useRef(0);
+
+  useEffect(() => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    // Use the native scroll position so the scrollbar and automatic movement agree.
+    const timer = window.setInterval(() => {
+      const panel = newsRef.current;
+      if (
+        !panel ||
+        document.hidden ||
+        reducedMotion.matches ||
+        panel.matches(':hover, :focus-within') ||
+        Date.now() < resumeAt.current
+      )
+        return;
+
+      const bottom = panel.scrollHeight - panel.clientHeight;
+      if (bottom <= 0) return;
+      if (panel.scrollTop >= bottom - 1) {
+        panel.scrollTop = 0;
+        resumeAt.current = Date.now() + 2000;
+      } else {
+        panel.scrollTop += 1;
+      }
+    }, 50);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  const pauseNews = () => {
+    resumeAt.current = Date.now() + 3000;
+  };
+
   return (
     <div className={styles.homeWrap}>
       <div className={styles.top}>
@@ -30,7 +62,16 @@ function Home() {
               <Link to="/xwdt">MORE&gt;&gt;</Link>
             </span>
           </div>
-          <ReactSeamlessScroll className={styles.newWapper}>
+          <div
+            ref={newsRef}
+            className={styles.newWapper}
+            role="region"
+            aria-label="新闻动态，可滚动浏览；悬停或聚焦时暂停自动滚动"
+            tabIndex={0}
+            onWheel={pauseNews}
+            onPointerDown={pauseNews}
+            onTouchMove={pauseNews}
+          >
             <div className={styles.news}>
               <div className={styles.loop}>
                 <div className="bd02">
@@ -39,11 +80,13 @@ function Home() {
                       {latestNews.map((item) => {
                         return (
                           <li key={item.id}>
-                            <Link to={{ pathname: '/xwdt', search: '?news=' + item.id }}>
-                              <h2>
-                                {item.isTest ? '【测试新闻】' : ''}
-                                {item.title}
-                              </h2>
+                            <Link
+                              to={{
+                                pathname: '/xwdt',
+                                search: '?news=' + item.id,
+                              }}
+                            >
+                              <h2>{item.title}</h2>
                               <p>{item.summary || item.desc}</p>
                               <span>发布时间：{item.time}</span>
                             </Link>
@@ -55,7 +98,7 @@ function Home() {
                 </div>
               </div>
             </div>
-          </ReactSeamlessScroll>
+          </div>
         </div>
       </div>
       <div className={styles.clear}></div>

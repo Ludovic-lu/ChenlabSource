@@ -41,7 +41,10 @@ module.exports = merge(baseConfig, {
     // 每次打包输出文件清空上次打包文件的插件
     new CleanWebpackPlugin(),
     // 使用交互式可缩放树映射可视化Webpack输出文件的大小
-    new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
+    }),
   ],
   optimization: {
     minimize: true,

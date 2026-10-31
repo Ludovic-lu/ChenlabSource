@@ -6,6 +6,16 @@
 // Supplemental datasets are excluded; the Autism article dated online 2022
 // already exists in the historical list and is not duplicated under print year 2023.
 const recentPublications = [
+  // Source: https://www.ovid.com/jnls/ear-hearing/abstract/10.1097/aud.0000000000001909~emotion-word-processing-in-mandarin-speaking-adults-with?redirectionsource=fulltextview
+  {
+    title: 'Emotion Word Processing in Mandarin-Speaking Adults With Hearing Aids and Cochlear Implants: The Interplay of Semantics, Prosody, and Facial Cues',
+    author: 'Gaode ZHANG, Jiyang HU, Peng GANG, Fei CHEN.',
+    journal: 'Ear & Hearing. Publish Ahead of Print, October 29, 2026.',
+    time: '2026',
+    link: 'https://doi.org/10.1097/AUD.0000000000001909',
+    linkLabel: 'DOI',
+    img:'paper-gaodezhang-2026'
+},
   // Source: https://api.crossref.org/works/10.1044%2F2026_JSLHR-25-01007
   {
     title:
