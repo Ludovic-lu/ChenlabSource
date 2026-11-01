@@ -16,6 +16,11 @@ interface IOption {
 
 const total = [
   {
+    name: '2026 年 9 月课题组团建',
+    img: 'znhy/2026年9月课题组团建',
+    type: '组内合影',
+  },
+  {
     name: '聚餐1',
     img: 'znhy/聚餐1',
     type: '组内合影',

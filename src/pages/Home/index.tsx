@@ -8,6 +8,7 @@ import banner0 from '../../asset/home/0.jpg';
 import banner1 from '../../asset/home/1.jpg';
 import banner2 from '../../asset/home/2.jpg';
 import banner3 from '../../asset/home/3.jpg';
+import banner4 from '../../asset/home/4.jpg';
 import { Link } from 'react-router-dom';
 
 function Home() {
@@ -53,6 +54,7 @@ function Home() {
             <img alt="" src={banner1} />
             <img alt="" src={banner2} />
             <img alt="" src={banner3} />
+            <img alt="组会合照" src={banner4} />
           </Carousel>
         </div>
         <div className={styles.right}>

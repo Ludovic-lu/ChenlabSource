@@ -5,9 +5,9 @@
   "author": "lei.liu",
   "license": "MIT",
   "scripts": {
-    "start": "webpack serve --config ./config/webpack.dev.ts",
-    "dev": "webpack serve --config ./config/webpack.dev.ts",
-    "build": "cross-env NODE_ENV=production webpack  --config  ./config/webpack.prod.ts",
+    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack serve --config ./config/webpack.dev.ts",
+    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack serve --config ./config/webpack.dev.ts",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production webpack  --config  ./config/webpack.prod.ts",
     "lint": "eslint --ext .tsx,.ts --fix ./src",
     "test": "jest",
     "prettier": "node scripts/prettier.ts",
