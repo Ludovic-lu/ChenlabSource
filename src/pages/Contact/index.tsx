@@ -1,4 +1,5 @@
 import React from 'react';
+import PreviewImage from '@components/PreviewImage';
 import styles from './index.less';
 import { connect } from 'react-redux';
 
@@ -18,11 +19,11 @@ function Contact() {
         <span>E-mail：chenfeianthony@gmail.com</span>
       </div>
       <div className={styles.position}>
-        <img alt="" src={positionImg} />
+        <PreviewImage alt="湖南大学外国语学院位置地图" src={positionImg} />
       </div>
       <div className={styles.imgs}>
-        <img alt="" src={contact1Img} />
-        <img alt="" src={contact2Img} />
+        <PreviewImage alt="湖南大学校园照片 1" src={contact1Img} />
+        <PreviewImage alt="湖南大学校园照片 2" src={contact2Img} />
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PreviewImage from '@components/PreviewImage';
 import styles from './index.less';
 import { connect } from 'react-redux';
 import { Button, Empty } from 'antd';
@@ -413,10 +414,8 @@ function LabMember() {
           return (
             <div className={styles.item} key={item.name}>
               <div className={styles.pic}>
-                <img
+                <PreviewImage
                   src={require(`@/asset/labMember/${item.name}.jpg`)}
-                  width="158"
-                  height="237"
                   alt={item.name}
                 />
               </div>

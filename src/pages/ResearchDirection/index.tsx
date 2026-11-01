@@ -1,4 +1,5 @@
 import React from 'react';
+import PreviewImage from '@components/PreviewImage';
 import styles from './index.less';
 import { connect } from 'react-redux';
 
@@ -46,13 +47,13 @@ function ResearchDirection() {
             & Peng，2020. Frontiers in
             Psychology），通过行为学感知实验，鉴别连续统中的标准刺激、范畴内靶刺激、范畴间靶刺激，进而使用oddball经典范式，成功实现了描述声调范畴化感知程度高低的电生理量化指标（图1）。
           </p>
-          <p className={styles.imgWapper}>
-            <img alt="" src={yjfx1Pic} />
+          <div className={styles.imgWapper}>
+            <PreviewImage alt="图1：脑电波变化及脑地形图" src={yjfx1Pic} />
             <p>
               图1.标准刺激、范畴内靶刺激、范畴间靶刺激引发的脑电波变化及脑地形图（Chen & Peng，2020.
               Frontiers in Psychology）
             </p>
-          </p>
+          </div>
         </div>
         <div className={styles.partWapper}>
           <span className={styles.partSubTitle}>B．健康儿童言语发展性研究</span>
@@ -69,24 +70,24 @@ function ResearchDirection() {
             & Peng，2021. Journal of Speech, Language, and Hearing
             Research）。结果表明高功能的自闭症青少年对于VOT的感知结果范畴化程度较低（图2）；且同年龄的高功能的自闭症青少年对于声调的感知比辅音嗓音起始时间感知的范畴化感知程度要高，该研究支持了前人研究，即自闭症者在音高维度上的声学加工存在优势、而在时间维度上的声学加工存在缺陷。
           </p>
-          <p className={styles.imgWapper}>
-            <img alt="" src={yjfx2Pic} />
+          <div className={styles.imgWapper}>
+            <PreviewImage alt="图2：VOT范畴化感知结果" src={yjfx2Pic} />
             <p>
               图2. 普通话高功能自闭症青少年对于VOT范畴化感知结果（Chen & Peng，2021. Journal of
               Speech, Language, and Hearing Research）
             </p>
-          </p>
+          </div>
           <p>
             我们课题组最近的一项研究，也运用了事件相关电位以及时频分析技术（图3），探讨了普通话自闭症和健康儿童在感知“婴儿导向式语言（Infant-directed
             Speech）”时，对于元音三角面积扩大的脑生理反应，论证了自闭症儿童在处理“婴儿导向式语言”这种具有社交性质以及语言学意义的言语信息时存在加工缺陷的脑神经基础。
           </p>
-          <p className={styles.imgWapper}>
-            <img alt="" src={yjfx3Pic} />
+          <div className={styles.imgWapper}>
+            <PreviewImage alt="图3：共振峰信息加工的时频分析结果" src={yjfx3Pic} />
             <p>
               图3. 汉语自闭症儿童对于言语和非言语领域内共振峰信息加工的时频分析结果（Chen等，2021.
               Autism Research）
             </p>
-          </p>
+          </div>
         </div>
         <div className={styles.partWapper}>
           <span className={styles.partTitle}>2）基于汉语背景言语产出研究</span>
@@ -96,13 +97,13 @@ function ResearchDirection() {
             Journal of Autism and Developmental
             Disorders）。通过声学分析发现，和典型发展儿童相比，自闭症儿童在模仿粤语声调时的音高变化幅度更大。而在模仿非言语时，自闭症者与典型发展儿童无异（图4）。此外，研究也发现声调背景的自闭症儿童无法利用母语音段中的音系知识来提高非母语声调产出的准确性，以上结果都表明：自闭症儿童音高声学加工的非典型性仅存在于言语加工层面。
           </p>
-          <p className={styles.imgWapper}>
-            <img alt="" src={yjfx4Pic} />
+          <div className={styles.imgWapper}>
+            <PreviewImage alt="图4：言语和非言语音高的模仿产出表现" src={yjfx4Pic} />
             <p>
               图4.自闭症儿童对于言语和非言语音高的模仿产出表现（Chen等，2021. Journal of Autism and
               Developmental Disorders）
             </p>
-          </p>
+          </div>
         </div>
         <div className={styles.partWapper}>
           <span className={styles.partSubTitle}>B．自闭症儿童言语康复训练系统</span>
@@ -111,14 +112,14 @@ function ResearchDirection() {
             One），用来帮助普通话自闭症儿童的发音教学。通过眼动技术观察自闭症儿童在学习时的注意力分配，并开展了康复训练的实证研究，论证了该3D虚拟发音人训练系统的有效性。另外，我们团队也开展了言语康复训练研究，证实了听觉-运动整合训练对于言语能力较低的自闭症儿童语音和词汇习得方面的促进作用，同时在延时后测中对于未训练的词汇学习仍然有效（图5）。这项研究表明，听觉-运动匹配的训练方法相较于传统的单一听觉重复性训练，可以更有效地提高自闭症儿童的声调、声母和韵母产出能力（Yan，Chen
             等，2021. Journal of Speech, Language, and Hearing Research）。
           </p>
-          <p className={styles.imgWapper}>
-            <img alt="" src={yjfx5Pic} />
+          <div className={styles.imgWapper}>
+            <PreviewImage alt="图5：语音和词汇习得准确率" src={yjfx5Pic} />
             <p>
               图5.
               听觉-运动匹配的训练方法(MMLI)和单一听觉重复性训练(SRT)对于自闭症儿童在语音和词汇习得上的准确率（Yan，Chen
               等，2021. Journal of Speech, Language, and Hearing Research）
             </p>
-          </p>
+          </div>
         </div>
       </div>
     </div>

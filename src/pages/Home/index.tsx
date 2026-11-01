@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import PreviewImage from '@components/PreviewImage';
 import { latestNews } from '../News/newsData';
 import { Carousel } from 'antd';
 import '../../../mock/homeApi';
@@ -12,6 +13,7 @@ import banner4 from '../../asset/home/4.jpg';
 import { Link } from 'react-router-dom';
 
 function Home() {
+  const [previewVisible, setPreviewVisible] = useState(false);
   const newsRef = useRef<HTMLDivElement>(null);
   const resumeAt = useRef(0);
 
@@ -49,12 +51,12 @@ function Home() {
     <div className={styles.homeWrap}>
       <div className={styles.top}>
         <div className={styles.left}>
-          <Carousel autoplay className={styles.images}>
-            <img alt="" src={banner0} />
-            <img alt="" src={banner1} />
-            <img alt="" src={banner2} />
-            <img alt="" src={banner3} />
-            <img alt="组会合照" src={banner4} />
+          <Carousel autoplay={!previewVisible} pauseOnFocus className={styles.images}>
+            <PreviewImage alt="课题组照片 1" src={banner0} onPreviewChange={setPreviewVisible} />
+            <PreviewImage alt="课题组照片 2" src={banner1} onPreviewChange={setPreviewVisible} />
+            <PreviewImage alt="课题组照片 3" src={banner2} onPreviewChange={setPreviewVisible} />
+            <PreviewImage alt="课题组照片 4" src={banner3} onPreviewChange={setPreviewVisible} />
+            <PreviewImage alt="组会合照" src={banner4} onPreviewChange={setPreviewVisible} />
           </Carousel>
         </div>
         <div className={styles.right}>

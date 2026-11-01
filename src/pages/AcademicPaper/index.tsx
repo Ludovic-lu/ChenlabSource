@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PreviewImage from '@components/PreviewImage';
 import styles from './index.less';
 import { connect } from 'react-redux';
 import { Button, Empty } from 'antd';
@@ -392,7 +393,9 @@ function AcademicPaper() {
                     </a>
                   ) : null}
                 </div>
-                {item.img ? <img src={require(`@/asset/xslw/${item.img}.jpg`)}></img> : null}
+                {item.img ? (
+                  <PreviewImage src={require(`@/asset/xslw/${item.img}.jpg`)} alt={item.title} />
+                ) : null}
               </div>
             </div>
           );
