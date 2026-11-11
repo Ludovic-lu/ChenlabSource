@@ -21,27 +21,9 @@ const newsRecords: NewsItem[] = [
     time: '2026-10-31',
   },
   {
-    id: 'test-autism-sentence-recognition-2026',
-    title: '基频与噪声如何影响普通话自闭症儿童的句子识别',
-    summary:
-      '陈飞、董龙杰的研究考察自然与平坦基频、安静与噪声条件下的句子识别，关注韵律线索与认知能力的作用。',
-    desc: '研究比较了30名普通话自闭症儿童与31名同龄典型发展儿童在不同基频和听觉条件下的句子识别表现。两组在平坦基频和噪声条件下的识别准确率均下降，自闭症儿童在基频被拉平时下降更明显。在保留自然基频的条件下，工作记忆与安静条件下的表现相关，言语智力和工作记忆与噪声条件下的表现相关；这些相关性在平坦基频条件下未出现。研究提示，理解句子识别表现需要同时关注韵律线索与认知能力。 论文题目：Fundamental Frequency and Noise Effects on Sentence Recognition in Mandarin-Speaking Autistic Children: The Role of Cognitive Abilities。作者：Fei CHEN, Longjie DONG. 发表期刊：Journal of Speech, Language, and Hearing Research. 69(9): 4132–4147.',
-    link: 'https://doi.org/10.1044/2026_jslhr-25-01007',
-    time: '2026-10-28',
-  },
-  {
-    id: 'test-autism-contrastive-focus-2026',
-    title: '普通话自闭症儿童如何用韵律表达对比焦点',
-    summary:
-      '研究团队关注普通话自闭症儿童对比焦点的韵律表达，为理解其口语交流特征提供证据。',
-    desc: '在口语交流中，说话人可以通过韵律突出与其他信息形成对比的内容，即对比焦点。该研究以普通话自闭症儿童为对象，考察他们如何通过韵律标记对比焦点，关注语言形式与交流功能之间的联系。论文从声调语言的角度，为理解自闭症儿童的韵律表达特征提供了研究材料。具体实验设计、结果与讨论请参阅论文原文。 论文题目：Prosodic marking of contrastive focus in Mandarin-speaking children with autism spectrum disorder。作者：Jinting YAN, Chen KUANG, Xiao LIANG, Xinquan SUN, Fei CHEN. 发表期刊：Frontiers in Psychology. 17: 1898035.',
-    link: 'https://doi.org/10.3389/fpsyg.2026.1898035',
-    time: '2026-10-28',
-  },
-  {
     link: '',
     title: '陈飞课题组参加第十七届中国演化语言学大会',
-    desc: '陈飞课题组阳扬、毛宁、宋羊、可容希等成员于2026年10月23号-10月25号前往甘肃兰州参加第十七届中国演化语言学大会（CCL2026），报告了实验室的最新学术成果：Fei CHEN,  Yu ZHANG, Kexuan LI, Feng XU. (2026). "Suprasegmental similarities and differences between infant- and foreigner-directed speech". 第十七届中国演化语言学大会(CCL2026). October 23-25, 2026, Lanzhou, China.',
+    desc: '陈飞课题组阳扬、毛宁、宋羊、可容希等成员于2026年10月23号-10月25号前往安徽合肥参加第十七届中国演化语言学大会（CCL2026）',
     time: '2026-10-28',
     id: 'archive-1',
   },
