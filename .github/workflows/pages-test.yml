@@ -1,0 +1,57 @@
+name: Pages test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Download source
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24.15.0'
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Install dependencies
+        run: npx --yes yarn@1.22.22 install --frozen-lockfile --non-interactive --registry https://registry.npmjs.org
+        env:
+          HUSKY: '0'
+
+      - name: Build website
+        run: npm run build -- --output-public-path /ChenlabSource/
+        env:
+          NODE_OPTIONS: --openssl-legacy-provider
+
+      - name: Prepare website
+        run: |
+          rm -f dist/report.html
+          cp dist/index.html dist/404.html
+          touch dist/.nojekyll
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+      - name: Publish website
+        id: deployment
+        uses: actions/deploy-pages@v4
