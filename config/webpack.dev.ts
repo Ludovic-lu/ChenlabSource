@@ -25,7 +25,7 @@ module.exports = merge(baseConfig, {
   devServer: {
     contentBase: resolve(__dirname, '../dist'),
     host: '127.0.0.1',
-    port: 8080,
+    port: 3000,
     open: false,
     hot: true,
     progress: true,

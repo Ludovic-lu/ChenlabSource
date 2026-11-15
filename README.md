@@ -33,11 +33,12 @@ $env:NODE_OPTIONS = '--openssl-legacy-provider'
 # 生产构建，输出到 dist/，包分析报告为 dist/report.html
 npm run build
 
-# 本地开发，访问 http://127.0.0.1:8080/；Ctrl+C 停止
+# 本地开发，访问 http://127.0.0.1:3000/；Ctrl+C 停止
 npm start
 ```
 
 开发服务仅监听本机，不自动打开浏览器。生产构建生成静态包分析报告后正常退出。
+默认开发端口为 3000，以避开本机 8080 端口的 `listen EACCES` 错误。如需使用其他端口，可执行 `npm start -- --port 8081`（`npm run dev -- --port 8081` 同样适用）。
 目前仍有旧依赖提示、Browserslist 数据过期和资源体积警告；这些不阻止本次构建。
 Webpack 使用 `transpileOnly`，构建成功不代表完整 TypeScript 类型检查通过。
 
