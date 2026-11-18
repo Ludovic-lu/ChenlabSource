@@ -64,6 +64,14 @@ function BasicLayout() {
               >
                 Google Scholar陈飞主页
               </a>
+              <a
+                title="朱敏官方主页"
+                href="https://grzy.hnu.edu.cn/site/index/zhumin-061"
+                target="_blank"
+                rel="noreferrer"
+              >
+                朱敏官方主页
+              </a>
               <a title="湖南大学" href="http://www.hnu.edu.cn/" target="_blank" rel="noreferrer">
                 湖南大学
               </a>

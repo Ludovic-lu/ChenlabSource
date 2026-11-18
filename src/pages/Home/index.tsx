@@ -9,7 +9,6 @@ import banner0 from '../../asset/home/0.jpg';
 import banner1 from '../../asset/home/1.jpg';
 import banner2 from '../../asset/home/2.jpg';
 import banner3 from '../../asset/home/3.jpg';
-import banner4 from '../../asset/home/4.jpg';
 import { Link } from 'react-router-dom';
 
 function Home() {
@@ -56,7 +55,6 @@ function Home() {
             <PreviewImage alt="课题组照片 2" src={banner1} onPreviewChange={setPreviewVisible} />
             <PreviewImage alt="课题组照片 3" src={banner2} onPreviewChange={setPreviewVisible} />
             <PreviewImage alt="课题组照片 4" src={banner3} onPreviewChange={setPreviewVisible} />
-            <PreviewImage alt="组会合照" src={banner4} onPreviewChange={setPreviewVisible} />
           </Carousel>
         </div>
         <div className={styles.right}>

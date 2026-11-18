@@ -11,7 +11,6 @@ interface IList {
   email: string;
   desc: string;
   hobby: string;
-  to?: string;
 }
 
 interface IOption {
@@ -32,11 +31,11 @@ const total = [
   },
   {
     name: '朱敏',
-    title: '导师',
+    title: '助理教授',
     type: '导师',
-    email: 'minzhuwiki@gmail.com',
-    desc: '本科毕业于西安外国语大学、硕士博士均毕业于湖南大学，毕业后留校任教。',
-    hobby: '游泳、爬山、旅游',
+    email: 'minzhuwiki@gmail.com / minzhu@hnu.edu.cn',
+    desc: '现任湖南大学外国语学院助理教授。本人从事病理语言学与实验语音学研究，聚焦言语感知产出及其在语言加工与习得过程中的心理与认知神经机制。',
+    hobby: null,
   },
 
   // 博士后：暂无数据
@@ -59,6 +58,14 @@ const total = [
     hobby: '手工，唱歌',
   },
   {
+    name: '姜雨辰',
+    title: '博士生',
+    type: '博士生',
+    email: 'Kalenlululu@qq.com',
+    desc: '2023级直博生，2019级本科，毕业于湖南大学后考取湖南大学直博生',
+    hobby: '音乐、书法',
+  },
+  {
     name: '郑昕',
     title: '博士生',
     type: '博士生',
@@ -75,20 +82,20 @@ const total = [
     hobby: '钢琴、绘画',
   },
   {
+    name: '张瑜',
+    title: '博士生',
+    type: '博士生',
+    email: 'zhangyu122@hnu.edu.cn',
+    desc: '2023级博士生，2021级硕士生，本科毕业于湖南大学',
+    hobby: '拉丁舞',
+  },
+  {
     name: '匡晨',
     title: '博士生',
     type: '博士生',
     email: 'kuangchen@hnu.edu.cn',
     desc: '2023级博士生，本科毕业于长沙理工大学、硕士毕业于湖南大学',
     hobby: '看书、旅游',
-  },
-  {
-    name: '张瑜',
-    title: '博士生',
-    type: '博士生',
-    email: 'zhangyu122@hnu.edu.cn',
-    desc: '2021级硕士生，本科毕业于湖南大学',
-    hobby: '拉丁舞',
   },
 
   // 硕士生
@@ -254,14 +261,7 @@ const total = [
     desc: '2019级本科生',
     hobby: '长笛、声乐、文学',
   },
-  {
-    name: '姜雨辰',
-    title: '本科生',
-    type: '本科生',
-    email: 'Kalenlululu@qq.com',
-    desc: '2019级本科生，2023级直博生',
-    hobby: '音乐、书法',
-  },
+
   {
     name: '聂煜妍',
     title: '本科生',
@@ -286,172 +286,42 @@ const total = [
     desc: '2019级本科生',
     hobby: '美剧、电影、游戏',
   },
+];
 
-  // 毕业生
+const alumniGroups = [
   {
-    name: '艾雁',
-    title: '毕业生',
-    type: '毕业生',
-    email: '1125428526@qq.com',
-    desc: '2022级硕士生，本科毕业于西北师范大学',
-    hobby: '跑步、美剧',
+    label: '曾在Chen Lab工作的博士后研究员',
+    members: ['郭承禹', '阎锦婷'],
   },
   {
-    name: '陈禹风',
-    title: '毕业生',
-    type: '毕业生',
-    email: 'yufeng_chen0575@foxmail.com',
-    desc: '2022级山东大学文学院博士生，硕士毕业于天津师范大学',
-    hobby: '球类运动、动漫',
+    label: '博士毕业生',
+    members: ['陈禹风（2022级）', '邓凯方（2022级）'],
   },
   {
-    name: '陈子龙',
-    title: '毕业生',
-    type: '毕业生',
-    email: 'chrischen0929@foxmail.com',
-    desc: '2022级硕士生，本科毕业于衡阳师范学院',
-    hobby: '足球、吉他、旅游',
+    label: '硕士毕业生',
+    members: [
+      '艾雁（2022级）',
+      '陈子龙（2022级）',
+      '王瑾（2022级）',
+      '杨晶晶（2022级）',
+      '杨宇（2022级）',
+      '吴诗韵（2021级）',
+      '张高德（2021级）',
+      '邓凤妮（2020级）',
+      '郭青青（2019级）',
+      '连婧（2019级）',
+    ],
   },
   {
-    name: '邓凯方',
-    title: '毕业生',
-    type: '毕业生',
-    email: '649557411@qq.com',
-    desc: '2022级 湖南师范大学外国语学院博士生，硕士毕业于湖南师范大学',
-    hobby: '美食、旅游',
-  },
-  {
-    name: '王瑾',
-    title: '毕业生',
-    type: '毕业生',
-    email: '2541242613@qq.com',
-    desc: '2022级硕士生，本科毕业于长沙理工大学',
-    hobby: '跑步、轮滑、美食',
-  },
-  {
-    name: '杨晶晶',
-    title: '毕业生',
-    type: '毕业生',
-    email: '2398243643@qq.com',
-    desc: '2022级硕士生，本科毕业于湖南工商大学',
-    hobby: '美食、旅游、音乐',
-  },
-  {
-    name: '杨宇',
-    title: '毕业生',
-    type: '毕业生',
-    email: 'yangyu913194@163.com',
-    desc: '2022级硕士生，本科毕业于河海大学',
-    hobby: '美食、看剧',
-  },
-  {
-    name: '吴诗韵',
-    title: '毕业生',
-    type: '毕业生',
-    email: '791983826@qq.com',
-    desc: '2021级硕士生，本科毕业于湖南农业大学',
-    hobby: '小说、追剧、旅游',
-  },
-  {
-    name: '张高德',
-    title: '毕业生',
-    type: '毕业生',
-    email: 'gordonzhang2000@hnu.edu.cn',
-    desc: '2021级硕士生，本科毕业于西南大学',
-    hobby: '数码、推理小说、美剧',
-  },
-  {
-    name: '邓凤妮',
-    title: '毕业生',
-    type: '毕业生',
-    email: '1183579215@qq.com',
-    desc: '2020级硕士生，本科毕业于西南政法大学',
-    hobby: '美食、看书',
-  },
-  {
-    name: '郭青青',
-    title: '毕业生',
-    type: '毕业生',
-    email: '1339806101@qq.com',
-    desc: '2019级硕士生，本科毕业于河北师范大学',
-    hobby: '跑步、打球',
-    to: '河北某初中执教',
-  },
-  {
-    name: '连婧',
-    title: '毕业生',
-    type: '毕业生',
-    email: 'lianjinglin@hnu.edu.cn',
-    desc: '2019级硕士生，本科毕业于山西师范大学',
-    hobby: '园艺、交谊舞',
-  },
-  {
-    name: '季玮程',
-    title: '毕业生',
-    type: '毕业生',
-    email: 'jiweicheng@hnu.edu.cn',
-    desc: '2018级 湖南大学文学院 本科生',
-    hobby: '篮球、写作、旅行',
-    to: '中国人民大学攻读硕士',
-  },
-  {
-    name: '李珂',
-    title: '毕业生',
-    type: '毕业生',
-    email: 'mslike628@gmail.com',
-    desc: '2018级本科生',
-    hobby: '音乐剧、舞蹈、美食',
-  },
-  {
-    name: '徐鹏',
-    title: '毕业生',
-    type: '毕业生',
-    email: '1052884828@qq.com',
-    desc: '2018级本科生',
-    hobby: '小说、悠悠球',
-    to: '湖南大学攻读硕士',
-  },
-  {
-    name: '赵睿',
-    title: '毕业生',
-    type: '毕业生',
-    email: '1336177330@qq.com',
-    desc: '2018级本科生',
-    hobby: '台球、摄影',
-  },
-  {
-    name: '吕佳',
-    title: '毕业生',
-    type: '毕业生',
-    email: '1763021134@qq.com',
-    desc: '2017级本科毕业生',
-    hobby: '动漫、羽毛球',
-    to: '武汉大学',
-  },
-  {
-    name: '张雪颖',
-    title: '毕业生',
-    type: '毕业生',
-    email: 'zhangxueying_5@163.com',
-    desc: '2017级本科毕业生',
-    hobby: '心理学、烘焙、摄影',
-    to: '爱丁堡大学',
-  },
-  {
-    name: '郭承禹',
-    title: '毕业生',
-    type: '毕业生',
-    email: 'guocy@hnu.edu.cn',
-    desc: '硕博毕业于上海师范大学',
-    hobby: '篮球、游泳',
-  },
-  {
-    name: '阎锦婷',
-    title: '毕业生',
-    type: '毕业生',
-    email: 'ting856868@126.com',
-    desc: '博士毕业于北京语言大学',
-    hobby: '唱歌',
+    label: '本科毕业生',
+    members: [
+      '季玮程（2018级）',
+      '李珂（2018级）',
+      '徐鹏（2018级）',
+      '赵睿（2018级）',
+      '吕佳（2017级）',
+      '张雪颖（2017级）',
+    ],
   },
 ];
 
@@ -516,29 +386,39 @@ function LabMember() {
           );
         })}
       </div>
-      <div className={styles.list}>
-        {list.length === 0 ? <Empty description="暂无数据" /> : null}
-        {list.map((item: IList) => {
-          return (
-            <div className={styles.item} key={item.name}>
-              <div className={styles.pic}>
-                <PreviewImage
-                  src={require(`@/asset/labMember/${item.name}.jpg`)}
-                  alt={item.name}
-                />
+      {curOpt === '毕业生' ? (
+        <div className={styles.alumni}>
+          {alumniGroups.map(({ label, members }) => (
+            <p key={label}>
+              <strong>{label}：</strong>
+              {members.join('、')}
+            </p>
+          ))}
+        </div>
+      ) : (
+        <div className={styles.list}>
+          {list.length === 0 ? <Empty description="暂无数据" /> : null}
+          {list.map((item: IList) => {
+            return (
+              <div className={styles.item} key={item.name}>
+                <div className={styles.pic}>
+                  <PreviewImage
+                    src={require(`@/asset/labMember/${item.name}.jpg`)}
+                    alt={item.name}
+                  />
+                </div>
+                <div className={styles.info}>
+                  <div className={styles.name}>{item.name}</div>
+                  <div className={styles.title}>{item.title}</div>
+                  <div className={styles.desc}>{item.desc}</div>
+                  <div className={styles.tel}>E-mail：{item.email}</div>
+                  {item.hobby ? <div className={styles.hobby}>爱好：{item.hobby}</div> : null}
+                </div>
               </div>
-              <div className={styles.info}>
-                <div className={styles.name}>{item.name}</div>
-                <div className={styles.title}>{item.title}</div>
-                <div className={styles.desc}>{item.desc}</div>
-                <div className={styles.tel}>E-mail：{item.email}</div>
-                {item.hobby ? <div className={styles.hobby}>爱好：{item.hobby}</div> : null}
-                {item.to ? <div className={styles.to}>毕业去向：{item.to}</div> : null}
-              </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
